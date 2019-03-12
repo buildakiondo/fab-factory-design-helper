@@ -1,13 +1,16 @@
 import CssBaseline from "@material-ui/core/CssBaseline";
+import { MuiThemeProvider } from "@material-ui/core/styles";
 import React, { Component } from "react";
+import theme from "./DefaultTheme";
+import Container from "./pages/index";
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
+      <MuiThemeProvider theme={theme}>
         <CssBaseline />
-        <header className="App-header">Fab Factory</header>
-      </div>
+        <Container />
+      </MuiThemeProvider>
     );
   }
 }
