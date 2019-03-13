@@ -1,0 +1,54 @@
+{
+  "question1": {
+    "name": "question1",
+    "type": "question",
+    "subtype": "multiple-choice",
+    "data": {
+      "question": "What is question 1?",
+      "options": [
+        {
+          "text": "option1",
+          "callback": "",
+          "nextState": "question2",
+          "reportData": {
+            "example" : 1
+          }
+        },
+        {
+          "text": "option2",
+          "callback": "",
+          "nextState": "question2",
+          "reportData": {
+            "example" : 1
+          }
+        }
+      ]
+    }
+  },
+  "question2": {
+    "name": "question2",
+    "type": "question",
+    "subtype": "multiple-choice",
+    "data": {
+      "question": "What is question 2?",
+      "options": [
+        {
+          "text": "option1",
+          "callback": "",
+          "nextState": "question1",
+          "reportData": {
+            "example" : 1
+          }
+        },
+        {
+          "text": "option2",
+          "callback": "",
+          "nextState": "question2",
+          "reportData": {
+            "example" : 1
+          }
+        }
+      ]
+    }
+  }
+}
