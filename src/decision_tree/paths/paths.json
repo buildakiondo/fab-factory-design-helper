@@ -11,7 +11,7 @@
           "callback": "",
           "nextState": "question2",
           "reportData": {
-            "example" : 1
+            "example": 1
           }
         },
         {
@@ -19,7 +19,7 @@
           "callback": "",
           "nextState": "question2",
           "reportData": {
-            "example" : 1
+            "example": 1
           }
         }
       ]
@@ -35,17 +35,51 @@
         {
           "text": "option1",
           "callback": "",
-          "nextState": "question1",
+          "nextState": "question3",
           "reportData": {
-            "example" : 1
+            "example": 1
           }
         },
         {
           "text": "option2",
           "callback": "",
-          "nextState": "question2",
+          "nextState": "question3",
           "reportData": {
-            "example" : 1
+            "example": 1
+          }
+        }
+      ]
+    }
+  },
+  "question3": {
+    "name": "question3",
+    "type": "question",
+    "subtype": "multiple-choice",
+    "data": {
+      "question": "What is the next question?",
+      "options": [
+        {
+          "text": "option1",
+          "callback": "",
+          "nextState": "question1",
+          "reportData": {
+            "example": 1
+          }
+        },
+        {
+          "text": "option2",
+          "callback": "",
+          "nextState": "question1",
+          "reportData": {
+            "example": 1
+          }
+        },
+        {
+          "text": "option3",
+          "callback": "",
+          "nextState": "question1",
+          "reportData": {
+            "example": 1
           }
         }
       ]

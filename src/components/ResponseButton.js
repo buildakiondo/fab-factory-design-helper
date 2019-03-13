@@ -32,9 +32,7 @@ const styles = theme => ({
 function ResponseButton({ children, classes, ...props }) {
   return (
     <ButtonBase className={classes.root} {...props}>
-      <div className={classes.img}>
-        <span>image/icon</span>
-      </div>
+      <div className={classes.img}>image/svg</div>
       <Typography className={classes.text} variant="h6">
         {children}
       </Typography>
