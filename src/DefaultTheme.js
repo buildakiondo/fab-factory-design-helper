@@ -1,37 +1,43 @@
-import { grey } from "@material-ui/core/colors";
-import { createMuiTheme } from "@material-ui/core/styles";
+import { grey } from '@material-ui/core/colors';
+import { createMuiTheme } from '@material-ui/core/styles';
 
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: "#4223fb",
-      contrastText: "#ffffff"
+      main: '#557490',
+      contrastText: '#ffffff',
     },
     secondary: {
-      main: "#96d5d2",
-      contrastText: "#333"
+      main: '#d89194',
+      contrastText: '#ffffff',
     },
     tertiary: {
-      main: "#4223fb",
-      contrastText: "#333"
+      main: '#21a9b0',
+      contrastText: '#ffffff',
     },
-    bodyText: grey[100]
+    grey: grey,
+    bodyText: grey[100],
   },
   typography: {
     useNextVariants: true,
     fontFamily: `'Nunito Sans', sans-serif`,
-    fontWeight: 300
+    fontWeight: 300,
+  },
+  props: {
+    MuiAppBar: {
+      elevation: 0,
+    },
   },
   overrides: {
     MuiTypography: {
       root: {
-        fontWeight: 300
+        fontWeight: 300,
       },
       h3: {
-        fontWeight: 300
-      }
-    }
-  }
+        fontWeight: 300,
+      },
+    },
+  },
 });
 
 export default theme;

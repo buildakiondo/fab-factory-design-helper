@@ -1,18 +1,32 @@
-import { Grid, Paper, Typography } from '@material-ui/core';
+import { makeStyles } from '@material-ui/styles';
 import React from 'react';
+import Content from '../components/Content';
+import Footer from '../components/Footer';
+import Header from '../components/Header';
+import QuestionContainer from '../components/QuestionContainer';
 
-function Container() {
+const styles = makeStyles({
+  appContainer: {
+    display: 'flex',
+    minHeight: '100vh',
+    flexFlow: 'column',
+  },
+  grow: {
+    flexGrow: 1,
+  },
+});
+
+function Main() {
+  const classes = styles();
   return (
-    <Paper elevation={0}>
-      <Grid container direction="column" spacing={24}>
-        <Grid item>
-          <Typography variant="h3" component="h1" align="center">
-            Fab Factory Demo
-          </Typography>
-        </Grid>
-      </Grid>
-    </Paper>
+    <div className={classes.appContainer}>
+      <Header />
+      <Content className={classes.grow}>
+        <QuestionContainer />
+      </Content>
+      <Footer />
+    </div>
   );
 }
 
-export default Container;
+export default Main;
