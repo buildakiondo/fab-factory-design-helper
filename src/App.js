@@ -1,9 +1,10 @@
-import CssBaseline from "@material-ui/core/CssBaseline";
-import { MuiThemeProvider } from "@material-ui/core/styles";
-import React, { Component } from "react";
-import theme from "./DefaultTheme";
-import Container from "./pages/index";
+import CssBaseline from '@material-ui/core/CssBaseline';
+import { MuiThemeProvider } from '@material-ui/core/styles';
+import React, { Component } from 'react';
+import theme from './DefaultTheme';
+import Container from './pages/index';
 
+// eslint-disable-next-line
 class App extends Component {
   render() {
     return (
