@@ -10,13 +10,17 @@
           "text": "option1",
           "callback": "",
           "nextState": "question2",
-          "reportData": {}
+          "reportData": {
+            "example" : 1
+          }
         },
         {
           "text": "option2",
           "callback": "",
           "nextState": "question2",
-          "reportData": {}
+          "reportData": {
+            "example" : 1
+          }
         }
       ]
     }
@@ -32,13 +36,17 @@
           "text": "option1",
           "callback": "",
           "nextState": "question1",
-          "reportData": {}
+          "reportData": {
+            "example" : 1
+          }
         },
         {
           "text": "option2",
           "callback": "",
           "nextState": "question2",
-          "reportData": {}
+          "reportData": {
+            "example" : 1
+          }
         }
       ]
     }
