@@ -11,7 +11,10 @@
           "callback": "",
           "nextState": "question2",
           "reportData": {
-            "example": 1
+            "tags" : [
+              "chair"
+            ],
+            "example" : 1
           }
         },
         {
@@ -19,7 +22,8 @@
           "callback": "",
           "nextState": "question2",
           "reportData": {
-            "example": 1
+            "tags" : [],
+            "example" : 1
           }
         }
       ]
@@ -63,7 +67,10 @@
           "callback": "",
           "nextState": "question1",
           "reportData": {
-            "example": 1
+            "tags" : [
+              "diy"
+            ],
+            "example" : 1
           }
         },
         {
@@ -79,7 +86,8 @@
           "callback": "",
           "nextState": "question1",
           "reportData": {
-            "example": 1
+            "tags" : [],
+            "example" : 1
           }
         }
       ]
