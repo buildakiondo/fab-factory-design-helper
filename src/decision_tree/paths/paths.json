@@ -41,6 +41,9 @@
           "callback": "",
           "nextState": "question3",
           "reportData": {
+            "tags": [
+              "diy"
+            ],
             "example": 1
           }
         },
@@ -49,6 +52,7 @@
           "callback": "",
           "nextState": "question3",
           "reportData": {
+            "tags" : [],
             "example": 1
           }
         }
@@ -67,9 +71,7 @@
           "callback": "",
           "nextState": "question1",
           "reportData": {
-            "tags" : [
-              "diy"
-            ],
+            "tags" : [],
             "example" : 1
           }
         },
@@ -78,6 +80,7 @@
           "callback": "",
           "nextState": "question1",
           "reportData": {
+            "tags" : [],
             "example": 1
           }
         },

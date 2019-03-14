@@ -39,7 +39,7 @@ it('does some backend logic', () => {
   expect(state.name).toEqual('question2');
 
   state = Tree.changeState(state.name, 'option1');
-  expect(state.name).toEqual('question1');
+  expect(state.name).toEqual('question3');
 
   try {
     state = Tree.changeState(state.name, 'fail');
