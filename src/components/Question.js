@@ -14,7 +14,9 @@ function Question({ children, classes }) {
   return (
     <Fade in={!isComplete}>
       <div className={classes.root}>
-        <Typography variant="h6">{children}</Typography>
+        <Typography variant="h6" align="center">
+          {children}
+        </Typography>
       </div>
     </Fade>
   );

@@ -2,6 +2,7 @@ import { Button, Fade, Grid } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 import propTypes from 'prop-types';
 import React from 'react';
+import Tree from '../decision_tree/tree';
 import Question from './Question';
 import ResponseButton from './ResponseButton';
 
@@ -11,49 +12,48 @@ const styles = theme => ({
   },
 });
 
-const testQuestion = {
-  type: 'question',
-  subtype: 'radio',
-  data: {
-    question: 'What are you looking for now?',
-    options: [
-      {
-        buttonText: 'a chair',
-      },
-      {
-        buttonText: 'a sofa',
-      },
-      {
-        buttonText: 'a bed',
-      },
-    ],
-  },
-};
-
 function QuestionContainer({ classes }) {
-  return (
-    <div className={classes.root}>
-      <Fade in={true}>
-        <div>
-          <Question>{testQuestion.data.question}</Question>
-          <Grid container spacing={24} justify="flex-start">
-            {testQuestion.data.options.map(option => (
-              <Grid item xs={6} sm={4} md={3} lg={2}>
-                <ResponseButton>{option.buttonText}</ResponseButton>
-              </Grid>
-            ))}
-          </Grid>
-          <Grid container justify="flex-end">
-            <Grid item>
-              <Button size="large" variant="outlined">
-                Done
-              </Button>
-            </Grid>
-          </Grid>
-        </div>
-      </Fade>
-    </div>
+  const [currentQuestion, setValue] = React.useState(
+    Tree.getCurrentState('question1'),
   );
+
+  if (currentQuestion.type === 'question') {
+    return (
+      <div className={classes.root}>
+        <Fade in={true}>
+          <div>
+            <Question>{currentQuestion.data.question}</Question>
+            <Grid container spacing={24} justify="center">
+              {currentQuestion.data.options.map(option => (
+                <Grid key={option.text} item xs={6} sm={4} md={3} lg={2}>
+                  <Fade in={true}>
+                    <ResponseButton
+                      onClick={() =>
+                        setValue(
+                          Tree.changeState(currentQuestion.name, option.text),
+                        )
+                      }
+                    >
+                      {option.text}
+                    </ResponseButton>
+                  </Fade>
+                </Grid>
+              ))}
+            </Grid>
+            <Grid container justify="center">
+              <Grid item>
+                <Button size="large" variant="outlined">
+                  Done
+                </Button>
+              </Grid>
+            </Grid>
+          </div>
+        </Fade>
+      </div>
+    );
+  } else {
+    return <div>This is not a question. This is a result</div>;
+  }
 }
 
 QuestionContainer.propTypes = {

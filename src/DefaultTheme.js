@@ -27,6 +27,9 @@ const theme = createMuiTheme({
     MuiAppBar: {
       elevation: 0,
     },
+    MuiButtin: {
+      elevation: 0,
+    },
   },
   overrides: {
     MuiTypography: {
@@ -35,6 +38,12 @@ const theme = createMuiTheme({
       },
       h3: {
         fontWeight: 300,
+      },
+    },
+    MuiButton: {
+      root: {
+        textTransform: 'none',
+        letterSpacing: '0.05em',
       },
     },
   },
