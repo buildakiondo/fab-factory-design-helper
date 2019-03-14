@@ -6,13 +6,40 @@ it('does some backend logic', () => {
   let errors = 0;
   let state = null;
   let report = null;
-  const expectedReport = { question1: { example: 1 } };
+  const expectedReport = {
+    question1: {
+      example: 1,
+      tags: ['chair'],
+    },
+    question2:
+    {
+      example: 1,
+      tags: ['diy'],
+    },
+    recommendations: [
+      {
+        description: 'This is how you build a chair',
+        link: 'https://www.youtube.com/watch?v=Yu9LbvUfCgg',
+        tags: [
+          'chair', 'diy',
+        ],
+        title: 'Build A Chair',
+      },
+    ],
+    tags: [
+      'chair',
+      'diy',
+    ],
+  };
 
   state = Tree.getCurrentState('question1');
   expect(state.name).toEqual('question1');
 
-  state = Tree.changeState(state.name, 'option2');
+  state = Tree.changeState(state.name, 'option1');
   expect(state.name).toEqual('question2');
+
+  state = Tree.changeState(state.name, 'option1');
+  expect(state.name).toEqual('question1');
 
   try {
     state = Tree.changeState(state.name, 'fail');
@@ -22,7 +49,7 @@ it('does some backend logic', () => {
   expect(errors).toEqual(1);
 
   report = Tree.getReport();
-  delete report.recommendations;
+
   expect(report).toEqual(expectedReport);
 });
 

@@ -11,6 +11,9 @@
           "callback": "",
           "nextState": "question2",
           "reportData": {
+            "tags" : [
+              "chair"
+            ],
             "example" : 1
           }
         },
@@ -19,6 +22,7 @@
           "callback": "",
           "nextState": "question2",
           "reportData": {
+            "tags" : [],
             "example" : 1
           }
         }
@@ -37,6 +41,9 @@
           "callback": "",
           "nextState": "question1",
           "reportData": {
+            "tags" : [
+              "diy"
+            ],
             "example" : 1
           }
         },
@@ -45,6 +52,7 @@
           "callback": "",
           "nextState": "question2",
           "reportData": {
+            "tags" : [],
             "example" : 1
           }
         }
