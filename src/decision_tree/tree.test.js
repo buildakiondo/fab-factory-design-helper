@@ -1,4 +1,5 @@
 import Tree from './tree';
+import videos from './recommendations/videos';
 
 
 it('does some backend logic', () => {
@@ -21,5 +22,42 @@ it('does some backend logic', () => {
   expect(errors).toEqual(1);
 
   report = Tree.getReport();
+  delete report.recommendations;
   expect(report).toEqual(expectedReport);
+});
+
+it('Check if the tags match', () => {
+  let misses = 0;
+  const tags = [
+    'chair',
+    'diy',
+  ];
+
+  const recommendations = Tree.processTags(tags);
+  let amount = 0;
+  if (recommendations) {
+    amount = Object.keys(recommendations).length;
+
+    recommendations.forEach((recommendation) => {
+      recommendation.tags.forEach((recommendedTag) => {
+        if (!tags.find(tag => tag === recommendedTag)) {
+          misses += 1;
+          throw new Error(`Recommendation ${recommendation.title} does not match the tags`);
+        }
+      });
+    });
+  }
+
+  let correctAmount = 0;
+  const videoArray = Object.values(videos);
+  videoArray.forEach((video) => {
+    const tagNum = video.tags.length;
+    let matches = 0;
+    video.tags.forEach((tag) => {
+      if (tags.find(compareTag => compareTag === tag)) matches += 1;
+    });
+    if (tagNum === matches) correctAmount += 1;
+  });
+  expect(misses).toBe(0);
+  expect(amount).toBe(correctAmount);
 });
