@@ -1,0 +1,11 @@
+{
+  "name" : {
+    "tags" : [
+      "tag1",
+      "tag2"
+    ],
+    "title" : "This is the title",
+    "description" : "This is the description",
+    "link" : "https://this.is.the/url"
+  }
+}
