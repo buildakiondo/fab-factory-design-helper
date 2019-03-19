@@ -1,14 +1,29 @@
-import { AppBar, Toolbar, Typography } from "@material-ui/core";
-import React from "react";
+import { Grid } from '@material-ui/core';
+import { withStyles } from '@material-ui/core/styles';
+import PropTypes from 'prop-types';
+import React from 'react';
+import Logo from './Logo';
 
-function Header() {
+const styles = theme => ({
+  root: {
+    padding: theme.spacing.unit * 3,
+  },
+});
+
+function Header({ classes }) {
   return (
-    <AppBar position="static" color="default">
-      <Toolbar>
-        <Typography variant="h5">Fab Factory</Typography>
-      </Toolbar>
-    </AppBar>
+    <header className={classes.root}>
+      <Grid container justify="center">
+        <Grid item xs={8} md={4} lg={3}>
+          <Logo />
+        </Grid>
+      </Grid>
+    </header>
   );
 }
 
-export default Header;
+Header.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
+
+export default withStyles(styles)(Header);

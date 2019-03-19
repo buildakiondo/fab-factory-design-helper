@@ -11,9 +11,6 @@ const styles = makeStyles({
     minHeight: '100vh',
     flexFlow: 'column',
   },
-  grow: {
-    flexGrow: 1,
-  },
 });
 
 function Main() {
@@ -21,7 +18,7 @@ function Main() {
   return (
     <div className={classes.appContainer}>
       <Header />
-      <Content className={classes.grow}>
+      <Content>
         <QuestionContainer />
       </Content>
       <Footer />

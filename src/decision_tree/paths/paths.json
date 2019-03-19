@@ -56,10 +56,10 @@
     "type": "question",
     "subtype": "multiple-choice",
     "data": {
-      "question": "What is the next question?",
+      "question": "I'm looking for",
       "options": [
         {
-          "text": "option1",
+          "text": "a bed",
           "callback": "",
           "nextState": "question1",
           "reportData": {
@@ -67,7 +67,7 @@
           }
         },
         {
-          "text": "option2",
+          "text": "a sofa",
           "callback": "",
           "nextState": "question1",
           "reportData": {
@@ -75,7 +75,7 @@
           }
         },
         {
-          "text": "option3",
+          "text": "a chair",
           "callback": "",
           "nextState": "question1",
           "reportData": {
