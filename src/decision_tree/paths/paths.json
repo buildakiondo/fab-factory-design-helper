@@ -1,96 +1,645 @@
 {
-  "question1": {
-    "name": "question1",
+  "not-built": {
+    "name": "not-built",
+    "type": "notice",
+    "subtype": "return"
+  },
+  "base-need": {
+    "name": "base-need",
     "type": "question",
     "subtype": "multiple-choice",
     "data": {
-      "question": "What is question 1?",
+      "question": "I want to improve my living space in order to be more...",
+      "allowMultiple": false,
       "options": [
         {
-          "text": "option1",
-          "callback": "",
-          "nextState": "question2",
+          "text": "productive",
+          "nextState": "space-use",
           "reportData": {
             "tags" : [
-              "chair"
-            ],
-            "example" : 1
+              "productive"
+            ]
           }
         },
         {
-          "text": "option2",
-          "callback": "",
-          "nextState": "question2",
+          "text": "comfortable",
+          "nextState": "space-use",
           "reportData": {
-            "tags" : [],
-            "example" : 1
+            "tags" : [
+              "comfortable"
+            ]
+          }
+        },
+        {
+          "text": "space efficient",
+          "nextState": "space-use",
+          "reportData": {
+            "tags" : [
+              "space-efficient"
+            ]
+          }
+        },
+        {
+          "text": "visually appealing",
+          "nextState": "space-use",
+          "reportData": {
+            "tags" : [
+              "visually-appealing"
+            ]
           }
         }
       ]
     }
   },
-  "question2": {
-    "name": "question2",
+  "space-use": {
+    "name": "space-use",
     "type": "question",
-    "subtype": "multiple-choice",
+    "subtype": "multiple-choice-importance",
     "data": {
-      "question": "What is question 2?",
+      "question1": "What do you currently use the space for? (pick as many as you want)",
+      "question2": "Assign importance to the following...",
+      "nextState": "space-want",
       "options": [
         {
-          "text": "option1",
-          "callback": "",
-          "nextState": "question3",
+          "text": "relax",
           "reportData": {
             "tags": [
-              "diy"
-            ],
-            "example": 1
+              "relax"
+            ]
           }
         },
         {
-          "text": "option2",
-          "callback": "",
-          "nextState": "question3",
+          "text": "focus",
           "reportData": {
-            "tags" : [],
-            "example": 1
+            "tags": [
+              "focus"
+            ]
+          }
+        },
+        {
+          "text": "creativity",
+          "reportData": {
+            "tags": [
+              "creativity"
+            ]
+          }
+        },
+        {
+          "text": "play",
+          "reportData": {
+            "tags": [
+              "play"
+            ]
+          }
+        },
+        {
+          "text": "learning",
+          "reportData": {
+            "tags": [
+              "learning"
+            ]
+          }
+        },
+        {
+          "text": "cooking",
+          "reportData": {
+            "tags": [
+              "cooking"
+            ]
+          }
+        },
+        {
+          "text": "eat",
+          "reportData": {
+            "tags": [
+              "eat"
+            ]
+          }
+        },
+        {
+          "text": "rest",
+          "reportData": {
+            "tags": [
+              "rest"
+            ]
+          }
+        },
+        {
+          "text": "gather",
+          "reportData": {
+            "tags": [
+              "gather"
+            ]
+          }
+        },
+        {
+          "text": "wash",
+          "reportData": {
+            "tags": [
+              "wash"
+            ]
+          }
+        },
+        {
+          "text": "work",
+          "reportData": {
+            "tags": [
+              "work"
+            ]
+          }
+        },
+        {
+          "text": "sleep",
+          "reportData": {
+            "tags": [
+              "sleep"
+            ]
           }
         }
       ]
     }
   },
-  "question3": {
-    "name": "question3",
+  "space-want": {
+    "name": "space-want",
+    "type": "question",
+    "subtype": "multiple-choice-importance",
+    "data": {
+      "question1": "What do you want to use the space for? (pick as many as you want)",
+      "question2": "Assign importance to the following...",
+      "nextState": "day-describe",
+      "options": [
+        {
+          "text": "relax",
+          "reportData": {
+            "tags": [
+              "relax"
+            ]
+          }
+        },
+        {
+          "text": "focus",
+          "reportData": {
+            "tags": [
+              "focus"
+            ]
+          }
+        },
+        {
+          "text": "creativity",
+          "reportData": {
+            "tags": [
+              "creativity"
+            ]
+          }
+        },
+        {
+          "text": "play",
+          "reportData": {
+            "tags": [
+              "play"
+            ]
+          }
+        },
+        {
+          "text": "learning",
+          "reportData": {
+            "tags": [
+              "learning"
+            ]
+          }
+        },
+        {
+          "text": "cooking",
+          "reportData": {
+            "tags": [
+              "cooking"
+            ]
+          }
+        },
+        {
+          "text": "eat",
+          "reportData": {
+            "tags": [
+              "eat"
+            ]
+          }
+        },
+        {
+          "text": "rest",
+          "reportData": {
+            "tags": [
+              "rest"
+            ]
+          }
+        },
+        {
+          "text": "gather",
+          "reportData": {
+            "tags": [
+              "gather"
+            ]
+          }
+        },
+        {
+          "text": "wash",
+          "reportData": {
+            "tags": [
+              "wash"
+            ]
+          }
+        },
+        {
+          "text": "work",
+          "reportData": {
+            "tags": [
+              "work"
+            ]
+          }
+        },
+        {
+          "text": "sleep",
+          "reportData": {
+            "tags": [
+              "sleep"
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "space-describe": {
+    "name": "space-describe",
+    "type": "question",
+    "subtype": "text-multiline",
+    "data": {
+      "question": "I want to improve my living space in order to be more...",
+      "nextState": "helpful-experience"
+    }
+  },
+  "helpful-experience": {
+    "name": "helpful-experience",
+    "type": "question",
+    "subtype": "text-multiline",
+    "data": {
+      "question": "What in your experience do you feel helps you reach your goal?",
+      "nextState": "difficulty"
+    }
+  },  
+  "difficulty": {
+    "name": "difficulty",
+    "type": "question",
+    "subtype": "text-multiline",
+    "data": {
+      "question": "What about your current space makes it difficult to reach your goal?",
+      "nextState": "helpful-experience"
+    }
+  },
+  "change-type": {
+    "name": "change-type",
     "type": "question",
     "subtype": "multiple-choice",
     "data": {
-      "question": "What is the next question?",
+      "question": "Which of these changes do you believe will help you achieve your goal?",
+      "allowMultiple": false,
       "options": [
         {
-          "text": "option1",
-          "callback": "",
-          "nextState": "question1",
+          "text": "redesign the entire space",
+          "nextState": "style-theme",
           "reportData": {
-            "tags" : [],
-            "example" : 1
+            "tags" : [
+              "redesign-space"
+            ]
           }
         },
         {
-          "text": "option2",
-          "callback": "",
-          "nextState": "question1",
+          "text": "redesign or re-purpose existing fixtures or furniture",
+          "nextState": "not-built",
           "reportData": {
-            "tags" : [],
-            "example": 1
+            "tags" : [
+              "redesign-existing"
+            ]
           }
         },
         {
-          "text": "option3",
-          "callback": "",
-          "nextState": "question1",
+          "text": "Replace old items with new ones",
+          "nextState": "not-built",
           "reportData": {
-            "tags" : [],
-            "example" : 1
+            "tags" : [
+              "replace-items"
+            ]
+          }
+        },
+        {
+          "text": "Adding new items",
+          "nextState": "not-built",
+          "reportData": {
+            "tags" : [
+              "add-items"
+            ]
+          }
+        },
+        {
+          "text": "remove unneeded items",
+          "nextState": "not-built",
+          "reportData": {
+            "tags" : [
+              "remove-items"
+            ]
+          }
+        },
+        {
+          "text": "changing space arrangement",
+          "nextState": "not-built",
+          "reportData": {
+            "tags" : [
+              "change-arrangement"
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "style-theme": {
+    "name": "style-theme",
+    "type": "question",
+    "subtype": "multiple-choice-picture",
+    "data": {
+      "allowMultiple": false,
+      "options": [
+        {
+          "text": "Clean & Simple",
+          "image": "placeholder.jpg",
+          "nextState": "style-swatch-clean",
+          "reportData": {
+            "tags" : [
+              "clean"
+            ]
+          }
+        },
+        {
+          "text": "Artistic & Creative",
+          "image": "placeholder.jpg",
+          "nextState": "not-built",
+          "reportData": {
+            "tags" : [
+              "creative"
+            ]
+          }
+        },
+        {
+          "text": "Contemporary",
+          "image": "placeholder.jpg",
+          "nextState": "not-built",
+          "reportData": {
+            "tags" : [
+              "contemporary"
+            ]
+          }
+        },
+        {
+          "text": "Traditional",
+          "image": "placeholder.jpg",
+          "nextState": "not-built",
+          "reportData": {
+            "tags" : [
+              "traditional"
+            ]
+          }
+        },
+        {
+          "text": "Classic",
+          "image": "placeholder.jpg",
+          "nextState": "not-built",
+          "reportData": {
+            "tags" : [
+              "classic"
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "style-swatch-clean": {
+    "name": "style-swatch-clean",
+    "type": "question",
+    "subtype": "multiple-choice-picture",
+    "data": {
+      "allowMultiple": false,
+      "options": [
+        {
+          "text": "Option A",
+          "image": "placeholder.jpg",
+          "nextState": "style-materials-clean",
+          "reportData": {
+            "tags" : [
+            ]
+          }
+        },
+        {
+          "text": "Option B",
+          "image": "placeholder.jpg",
+          "nextState": "style-materials-clean",
+          "reportData": {
+            "tags" : [
+            ]
+          }
+        },
+        {
+          "text": "Option C",
+          "image": "placeholder.jpg",
+          "nextState": "style-materials-clean",
+          "reportData": {
+            "tags" : [
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "style-materials-clean": {
+    "name": "style-materials-clean",
+    "type": "question",
+    "subtype": "multiple-choice-picture",
+    "data": {
+      "allowMultiple": false,
+      "options": [
+        {
+          "text": "Option A",
+          "image": "placeholder.jpg",
+          "nextState": "space-size",
+          "reportData": {
+            "tags" : [
+            ]
+          }
+        },
+        {
+          "text": "Option B",
+          "image": "placeholder.jpg",
+          "nextState": "space-size",
+          "reportData": {
+            "tags" : [
+            ]
+          }
+        },
+        {
+          "text": "Option C",
+          "image": "placeholder.jpg",
+          "nextState": "space-size",
+          "reportData": {
+            "tags" : [
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "space-size": {
+    "name": "space-size",
+    "type": "question",
+    "subtype": "multiple-choice",
+    "data": {
+      "question": "How big is the space you want to change? (pick closest)",
+      "allowMultiple": false,
+      "options": [
+        {
+          "text": "Very small - 1m x 1m",
+          "nextState": "space-size-exact",
+          "reportData": {
+            "tags" : [
+              "space-very-small"
+            ]
+          }
+        },
+        {
+          "text": "Small - 2m x 2m",
+          "nextState": "space-size-exact",
+          "reportData": {
+            "tags" : [
+              "space-small"
+            ]
+          }
+        },
+        {
+          "text": "Average - 3m x 3m",
+          "nextState": "space-size-exact",
+          "reportData": {
+            "tags" : [
+              "space-average"
+            ]
+          }
+        },
+        {
+          "text": "Large - 5m x 5m",
+          "nextState": "space-size-exact",
+          "reportData": {
+            "tags" : [
+              "space-large"
+            ]
+          }
+        },
+        {
+          "text": "Very large - 10m x 10m (or bigger)",
+          "nextState": "space-size-exact",
+          "reportData": {
+            "tags" : [
+              "space-very-large"
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "space-size-exact": {
+    "name": "space-size-exact",
+    "type": "question",
+    "subtype": "multiple-choice",
+    "data": {
+      "question": "Do you have exact measurements?",
+      "allowMultiple": false,
+      "options": [
+        {
+          "text": "Yes",
+          "nextState": "space-size-exact-input"
+        },
+        {
+          "text": "No",
+          "nextState": "budget"
+        }
+      ]
+    }
+  },
+  "space-size-exact-input": {
+    "name": "space-size-exact-input",
+    "type": "question",
+    "subtype": "text-multiline",
+    "data": {
+      "question": "Please input any specific measurement information that you have bellow:",
+      "nextState": "budget"
+    }
+  },
+  "budget": {
+    "name": "budget",
+    "type": "question",
+    "subtype": "slider",
+    "data": {
+      "question": "How big is your budget?",
+      "unit": "£",
+      "bottomLimit": 0,
+      "topLimit": 1000000,
+      "nextState": "deadline"
+    }
+  },
+  "deadline": {
+    "name": "deadline",
+    "type": "question",
+    "subtype": "slider",
+    "data": {
+      "question": "How big is your budget?",
+      "unit": "weeks",
+      "bottomLimit": 0,
+      "topLimit": 52,
+      "nextState": "participation"
+    }
+  },
+  "participation": {
+    "name": "participation",
+    "type": "question",
+    "subtype": "multiple-choice",
+    "data": {
+      "question": "Pick the option(s) that best suits you",
+      "allowMultiple": true,
+      "nextState": "report",
+      "options": [
+        {
+          "text": "I want to work alone",
+          "reportData": {
+            "tags" : [
+              "work-alone"
+            ]
+          }
+        },
+        {
+          "text": "I want to learn skills to help",
+          "reportData": {
+            "tags" : [
+              "work-learn"
+            ]
+          }
+        },
+        {
+          "text": "I want to collaborate with other people at my skill level",
+          "reportData": {
+            "tags" : [
+              "work-collaborate"
+            ]
+          }
+        },
+        {
+          "text": "I want a professional designer",
+          "reportData": {
+            "tags" : [
+              "work-designer"
+            ]
           }
         }
       ]

@@ -8,37 +8,48 @@ function getCurrentState(state) {
   return paths[state];
 }
 
-function changeState(currentState, answer) {
-  let nextState = null;
-  let reportData = null;
-  let tags = null;
-  let found = 0;
+function changeState(currentState, nextState, data) {
+  if (data) {
+    const tags = [];
 
-  if (paths[currentState].type !== 'question') {
-    throw new Error("Can't select next state, current state is not a question");
-  }
+    report[paths[currentState].name] = data;
 
-  const { options } = paths[currentState].data;
-  options.forEach((option) => {
-    if (option.text === answer) {
-      found += 1;
-      ({ nextState } = option);
-      ({ reportData } = option);
-      ({ tags } = option.reportData);
+    if (Object.prototype.hasOwnProperty.call(data, 'option')) {
+      const { option } = data;
+      let optionData = null;
+      let optionTags = null;
+
+      let found = 0;
+
+      const { currentOptions } = paths[currentState].data;
+      currentOptions.forEach((currentOption) => {
+        if (currentOption.text === option) {
+          found += 1;
+          ({ optionData } = currentOption);
+          if (optionData) {
+            optionTags = currentOption.optionData.tags;
+          }
+        }
+      });
+
+      if (found !== 1) {
+        throw new Error('Amount of matching options does not equal 1');
+      }
+
+      report[paths[currentState].name].optionData = optionData;
+
+      if (optionTags) {
+        optionTags.forEach(tag => tags.push(tag));
+      }
     }
-  });
 
-  if (nextState === null) {
-    throw new Error('Next state not available in node');
-  } else if (found > 1) {
-    throw new Error('More than one state found with that name');
-  }
-
-  report[paths[currentState].name] = reportData;
-
-  if (tags) {
     tags.forEach(tag => report.tags.push(tag));
   }
+
+  if (!paths[nextState]) {
+    throw new Error('Next state not available');
+  }
+
   return paths[nextState];
 }
 

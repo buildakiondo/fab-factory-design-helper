@@ -5,52 +5,27 @@ import videos from './recommendations/videos';
 it('does some backend logic', () => {
   let errors = 0;
   let state = null;
-  let report = null;
-  const expectedReport = {
-    question1: {
-      example: 1,
-      tags: ['chair'],
-    },
-    question2:
-    {
-      example: 1,
-      tags: ['diy'],
-    },
-    recommendations: [
-      {
-        description: 'This is how you build a chair',
-        link: 'https://www.youtube.com/watch?v=Yu9LbvUfCgg',
-        tags: [
-          'chair', 'diy',
-        ],
-        title: 'Build A Chair',
-      },
-    ],
-    tags: [
-      'chair',
-      'diy',
-    ],
-  };
 
-  state = Tree.getCurrentState('question1');
-  expect(state.name).toEqual('question1');
+  state = Tree.getCurrentState('base-need');
+  expect(state.name).toEqual('base-need');
 
-  state = Tree.changeState(state.name, 'option1');
-  expect(state.name).toEqual('question2');
+  state = Tree.changeState(state.name, 'space-use', { answer: 'productive' });
+  expect(state.name).toEqual('space-use');
 
-  state = Tree.changeState(state.name, 'option1');
-  expect(state.name).toEqual('question3');
+  state = Tree.changeState(state.name, 'space-want', { answer: 'relax' });
+  expect(state.name).toEqual('space-want');
 
   try {
     state = Tree.changeState(state.name, 'fail');
   } catch (error) {
     errors += 1;
   }
-  expect(errors).toEqual(1);
-
-  report = Tree.getReport();
-
-  expect(report).toEqual(expectedReport);
+  try {
+    state = Tree.changeState(state.name, 'day-describe', { answer: 'fail' });
+  } catch (error) {
+    errors += 1;
+  }
+  expect(errors).toEqual(2);
 });
 
 it('Check if the tags match', () => {
