@@ -1,6 +1,7 @@
 import paths from './paths/paths.json';
 import videos from './recommendations/videos';
 import articles from './recommendations/articles';
+import services from './recommendations/services';
 
 // When this goes server-side, this should no longer be global
 const report = { tags: [] };
@@ -54,7 +55,7 @@ function changeState(currentState, nextState, data) {
 }
 
 function processTags(userTags) {
-  let content = [Object.values(videos), Object.values(articles)];
+  let content = [Object.values(videos), Object.values(articles), Object.values(services)];
   content = [].concat(...content);
 
   const recommendations = [];
