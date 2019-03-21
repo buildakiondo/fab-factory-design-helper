@@ -1,5 +1,6 @@
 import paths from './paths/paths.json';
 import videos from './recommendations/videos';
+import articles from './recommendations/articles';
 
 // When this goes server-side, this should no longer be global
 const report = { tags: [] };
@@ -53,20 +54,22 @@ function changeState(currentState, nextState, data) {
 }
 
 function processTags(userTags) {
+  let content = [Object.values(videos), Object.values(articles)];
+  content = [].concat(...content);
+
   const recommendations = [];
   // Go through each video...
-  const videoArray = Object.values(videos);
-  videoArray.forEach((video) => {
+  content.forEach((item) => {
     // Check if each of the tags...
-    const tagNum = video.tags.length;
+    const tagNum = item.tags.length;
     let matches = 0;
-    video.tags.forEach((videoTag) => {
+    item.tags.forEach((videoTag) => {
       // Match one of the tags given
       if (userTags.find(userTag => videoTag === userTag)) matches += 1;
     });
 
     if (tagNum === matches) {
-      recommendations.push(video);
+      recommendations.push(item);
     }
   });
   return recommendations;
