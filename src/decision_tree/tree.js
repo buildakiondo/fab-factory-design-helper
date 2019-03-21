@@ -14,20 +14,20 @@ function changeState(currentState, nextState, data) {
 
     report[paths[currentState].name] = data;
 
-    if (Object.prototype.hasOwnProperty.call(data, 'option')) {
-      const { option } = data;
-      let optionData = null;
-      let optionTags = null;
+    if (Object.prototype.hasOwnProperty.call(data, 'answer')) {
+      const { answer } = data;
+      let reportData = null;
+      let reportTags = null;
 
       let found = 0;
 
-      const { currentOptions } = paths[currentState].data;
-      currentOptions.forEach((currentOption) => {
-        if (currentOption.text === option) {
+      const { options } = paths[currentState].data;
+      options.forEach((currentOption) => {
+        if (currentOption.text === answer) {
           found += 1;
-          ({ optionData } = currentOption);
-          if (optionData) {
-            optionTags = currentOption.optionData.tags;
+          ({ reportData } = currentOption);
+          if (reportData) {
+            reportTags = currentOption.reportData.tags;
           }
         }
       });
@@ -36,10 +36,9 @@ function changeState(currentState, nextState, data) {
         throw new Error('Amount of matching options does not equal 1');
       }
 
-      report[paths[currentState].name].optionData = optionData;
-
-      if (optionTags) {
-        optionTags.forEach(tag => tags.push(tag));
+      report[paths[currentState].name].optionData = reportData;
+      if (reportTags) {
+        reportTags.forEach(tag => tags.push(tag));
       }
     }
 
