@@ -166,7 +166,7 @@
     "data": {
       "question1": "What do you want to use the space for? (pick as many as you want)",
       "question2": "Assign importance to the following...",
-      "nextState": "day-describe",
+      "nextState": "space-describe",
       "options": [
         {
           "text": "relax",
