@@ -13,11 +13,16 @@ const styles = theme => ({
     width: 200,
     margin: '0 auto',
     backgroundColor: '#fff',
-    transition: theme.transitions.create(['border-color', 'background-color'], {
-      duration: theme.transitions.duration.complex,
-    }),
+    boxShadow: '0px 6px 20px -5px rgba(0,0,0,0.15)',
+    transition: theme.transitions.create(
+      ['border-color', 'background-color', 'transform'],
+      {
+        duration: theme.transitions.duration.complex,
+      },
+    ),
     '&:hover': {
       backgroundColor: theme.palette.background.main,
+      transform: 'translateY(-3px)',
     },
   },
   img: {

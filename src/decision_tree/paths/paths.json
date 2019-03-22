@@ -55,6 +55,36 @@
       "nextState": "space-want",
       "options": [
         {
+          "text": "relax",
+          "reportData": {
+            "tags": ["relax"]
+          }
+        },
+        {
+          "text": "focus",
+          "reportData": {
+            "tags": ["focus"]
+          }
+        },
+        {
+          "text": "creativity",
+          "reportData": {
+            "tags": ["creativity"]
+          }
+        },
+        {
+          "text": "play",
+          "reportData": {
+            "tags": ["play"]
+          }
+        },
+        {
+          "text": "learning",
+          "reportData": {
+            "tags": ["learning"]
+          }
+        },
+        {
           "text": "cooking",
           "reportData": {
             "tags": ["cooking"]
@@ -108,7 +138,7 @@
         "What do you want to use the space for? (pick as many as you want)",
         "Assign importance to the following..."
       ],
-      "nextState": "day-describe",
+      "nextState": "space-describe",
       "options": [
         {
           "text": "relax",
@@ -209,7 +239,7 @@
     "subtype": "text-multiline",
     "data": {
       "question": "What about your current space makes it difficult to reach your goal?",
-      "nextState": "helpful-experience"
+      "nextState": "change-type"
     }
   },
   "change-type": {
@@ -270,11 +300,12 @@
     "type": "question",
     "subtype": "multiple-choice-picture",
     "data": {
+      "question": "Which image do you like the most?",
       "allowMultiple": false,
       "options": [
         {
           "text": "Clean & Simple",
-          "image": "placeholder.jpg",
+          "image": "https://images.unsplash.com/photo-1501183638710-841dd1904471?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80",
           "nextState": "style-swatch-clean",
           "reportData": {
             "tags": ["clean"]
@@ -282,7 +313,7 @@
         },
         {
           "text": "Artistic & Creative",
-          "image": "placeholder.jpg",
+          "image": "https://images.unsplash.com/photo-1493809842364-78817add7ffb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80",
           "nextState": "not-built",
           "reportData": {
             "tags": ["creative"]
@@ -290,7 +321,7 @@
         },
         {
           "text": "Contemporary",
-          "image": "placeholder.jpg",
+          "image": "https://images.unsplash.com/photo-1513694203232-719a280e022f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2549&q=80",
           "nextState": "not-built",
           "reportData": {
             "tags": ["contemporary"]
@@ -306,7 +337,7 @@
         },
         {
           "text": "Classic",
-          "image": "placeholder.jpg",
+          "image": "https://images.unsplash.com/photo-1519643225200-94e79e383724?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2555&q=80",
           "nextState": "not-built",
           "reportData": {
             "tags": ["classic"]
@@ -320,6 +351,7 @@
     "type": "question",
     "subtype": "multiple-choice-picture",
     "data": {
+      "question": "Which image do you prefer?",
       "allowMultiple": false,
       "options": [
         {

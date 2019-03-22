@@ -34,7 +34,7 @@ const theme = createMuiTheme({
   palette: colors,
   typography: {
     useNextVariants: true,
-    fontFamily: '\'Nunito Sans\', sans-serif',
+    fontFamily: "'Nunito Sans', sans-serif",
     fontWeight: 300,
   },
   props: {
@@ -43,6 +43,9 @@ const theme = createMuiTheme({
     },
     MuiButton: {
       elevation: 0,
+    },
+    MuiIconButton: {
+      color: 'inherit',
     },
   },
   overrides: {

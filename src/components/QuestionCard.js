@@ -16,7 +16,7 @@ const styles = theme => ({
       position: 'absolute',
       height: 20,
       width: 20,
-      boxShadow: '6px 6px 14px -2px rgba(0,0,0,0.05)',
+      boxShadow: '6px 6px 14px -2px rgba(0,0,0,0.1)',
       backgroundColor: '#fff',
       transform: 'rotate(45deg)',
       top: 'calc(100% - 14px)',
@@ -24,15 +24,16 @@ const styles = theme => ({
       marginLeft: '-8px',
     },
   },
-  questionType: {
-    color: theme.palette.primary.main,
+  questionText: {
+    color: '#000',
     overflow: 'hidden',
     margin: '0 auto',
     borderRadius: 20,
     display: 'inline-block',
-    boxShadow: '0 4px 14px rgba(0,0,0,0.05)',
+    boxShadow: '0 4px 14px rgba(0,0,0,0.1)',
     backgroundColor: '#fff',
-    '& strong': {
+    fontWeight: 300,
+    '& span': {
       display: 'block',
       padding: `${theme.spacing.unit * 3}px ${theme.spacing.unit * 4}px`,
       backgroundColor: '#fff',
@@ -46,17 +47,17 @@ const styles = theme => ({
   },
 });
 
-function QuestionCard({ children, classes, question }) {
+function QuestionCard({ children, classes, question, ...props }) {
   return (
-    <div className={classes.root}>
+    <div className={classes.root} {...props}>
       <div className={classes.question}>
         <Typography
-          className={classes.questionType}
+          className={classes.questionText}
           variant="h5"
           align="center"
           color="inherit"
         >
-          <strong>{question}</strong>
+          <span>{question}</span>
         </Typography>
       </div>
       <div className={classes.cardContent}>{children}</div>

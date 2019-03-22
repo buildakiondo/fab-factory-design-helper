@@ -30,11 +30,11 @@ const styles = theme => ({
   },
 });
 
-function ResponseSelect({ classes }) {
+function ResponseSelect({ classes, children, handleChange }) {
   return (
     <Select
       value=""
-      //    onChange={handleChange}
+      //onChange={handleChange}
       displayEmpty
       name="select"
       IconComponent={ArrowDownIcon}
@@ -52,12 +52,8 @@ function ResponseSelect({ classes }) {
         },
       }}
     >
-      <MenuItem value="">
-        <em>None</em>
-      </MenuItem>
-      <MenuItem value={10}>Ten</MenuItem>
-      <MenuItem value={20}>Twenty</MenuItem>
-      <MenuItem value={30}>Thirty</MenuItem>
+      <MenuItem value="">Select an option</MenuItem>
+      {children}
     </Select>
   );
 }
