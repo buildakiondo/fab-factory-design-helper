@@ -14,7 +14,7 @@ function Header({ classes }) {
   return (
     <header className={classes.root}>
       <Grid container justify="center">
-        <Grid item xs={8} md={4} lg={3}>
+        <Grid item xs={11} md={4} lg={3}>
           <Logo />
         </Grid>
       </Grid>

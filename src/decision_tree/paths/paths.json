@@ -16,36 +16,28 @@
           "text": "productive",
           "nextState": "space-use",
           "reportData": {
-            "tags" : [
-              "productive"
-            ]
+            "tags": ["productive"]
           }
         },
         {
           "text": "comfortable",
           "nextState": "space-use",
           "reportData": {
-            "tags" : [
-              "comfortable"
-            ]
+            "tags": ["comfortable"]
           }
         },
         {
           "text": "space efficient",
           "nextState": "space-use",
           "reportData": {
-            "tags" : [
-              "space-efficient"
-            ]
+            "tags": ["space-efficient"]
           }
         },
         {
           "text": "visually appealing",
           "nextState": "space-use",
           "reportData": {
-            "tags" : [
-              "visually-appealing"
-            ]
+            "tags": ["visually-appealing"]
           }
         }
       ]
@@ -56,104 +48,82 @@
     "type": "question",
     "subtype": "multiple-choice-importance",
     "data": {
-      "question1": "What do you currently use the space for? (pick as many as you want)",
-      "question2": "Assign importance to the following...",
+      "question": [
+        "What do you currently use the space for? (pick as many as you want)",
+        "Assign importance to the following..."
+      ],
       "nextState": "space-want",
       "options": [
         {
           "text": "relax",
           "reportData": {
-            "tags": [
-              "relax"
-            ]
+            "tags": ["relax"]
           }
         },
         {
           "text": "focus",
           "reportData": {
-            "tags": [
-              "focus"
-            ]
+            "tags": ["focus"]
           }
         },
         {
           "text": "creativity",
           "reportData": {
-            "tags": [
-              "creativity"
-            ]
+            "tags": ["creativity"]
           }
         },
         {
           "text": "play",
           "reportData": {
-            "tags": [
-              "play"
-            ]
+            "tags": ["play"]
           }
         },
         {
           "text": "learning",
           "reportData": {
-            "tags": [
-              "learning"
-            ]
+            "tags": ["learning"]
           }
         },
         {
           "text": "cooking",
           "reportData": {
-            "tags": [
-              "cooking"
-            ]
+            "tags": ["cooking"]
           }
         },
         {
           "text": "eat",
           "reportData": {
-            "tags": [
-              "eat"
-            ]
+            "tags": ["eat"]
           }
         },
         {
           "text": "rest",
           "reportData": {
-            "tags": [
-              "rest"
-            ]
+            "tags": ["rest"]
           }
         },
         {
           "text": "gather",
           "reportData": {
-            "tags": [
-              "gather"
-            ]
+            "tags": ["gather"]
           }
         },
         {
           "text": "wash",
           "reportData": {
-            "tags": [
-              "wash"
-            ]
+            "tags": ["wash"]
           }
         },
         {
           "text": "work",
           "reportData": {
-            "tags": [
-              "work"
-            ]
+            "tags": ["work"]
           }
         },
         {
           "text": "sleep",
           "reportData": {
-            "tags": [
-              "sleep"
-            ]
+            "tags": ["sleep"]
           }
         }
       ]
@@ -164,104 +134,83 @@
     "type": "question",
     "subtype": "multiple-choice-importance",
     "data": {
-      "question1": "What do you want to use the space for? (pick as many as you want)",
-      "question2": "Assign importance to the following...",
+
+      "question": [
+        "What do you want to use the space for? (pick as many as you want)",
+        "Assign importance to the following..."
+      ],
       "nextState": "space-describe",
       "options": [
         {
           "text": "relax",
           "reportData": {
-            "tags": [
-              "relax"
-            ]
+            "tags": ["relax"]
           }
         },
         {
           "text": "focus",
           "reportData": {
-            "tags": [
-              "focus"
-            ]
+            "tags": ["focus"]
           }
         },
         {
           "text": "creativity",
           "reportData": {
-            "tags": [
-              "creativity"
-            ]
+            "tags": ["creativity"]
           }
         },
         {
           "text": "play",
           "reportData": {
-            "tags": [
-              "play"
-            ]
+            "tags": ["play"]
           }
         },
         {
           "text": "learning",
           "reportData": {
-            "tags": [
-              "learning"
-            ]
+            "tags": ["learning"]
           }
         },
         {
           "text": "cooking",
           "reportData": {
-            "tags": [
-              "cooking"
-            ]
+            "tags": ["cooking"]
           }
         },
         {
           "text": "eat",
           "reportData": {
-            "tags": [
-              "eat"
-            ]
+            "tags": ["eat"]
           }
         },
         {
           "text": "rest",
           "reportData": {
-            "tags": [
-              "rest"
-            ]
+            "tags": ["rest"]
           }
         },
         {
           "text": "gather",
           "reportData": {
-            "tags": [
-              "gather"
-            ]
+            "tags": ["gather"]
           }
         },
         {
           "text": "wash",
           "reportData": {
-            "tags": [
-              "wash"
-            ]
+            "tags": ["wash"]
           }
         },
         {
           "text": "work",
           "reportData": {
-            "tags": [
-              "work"
-            ]
+            "tags": ["work"]
           }
         },
         {
           "text": "sleep",
           "reportData": {
-            "tags": [
-              "sleep"
-            ]
+            "tags": ["sleep"]
           }
         }
       ]
@@ -284,14 +233,14 @@
       "question": "What in your experience do you feel helps you reach your goal?",
       "nextState": "difficulty"
     }
-  },  
+  },
   "difficulty": {
     "name": "difficulty",
     "type": "question",
     "subtype": "text-multiline",
     "data": {
       "question": "What about your current space makes it difficult to reach your goal?",
-      "nextState": "helpful-experience"
+      "nextState": "change-type"
     }
   },
   "change-type": {
@@ -306,54 +255,42 @@
           "text": "redesign the entire space",
           "nextState": "style-theme",
           "reportData": {
-            "tags" : [
-              "redesign-space"
-            ]
+            "tags": ["redesign-space"]
           }
         },
         {
           "text": "redesign or re-purpose existing fixtures or furniture",
           "nextState": "not-built",
           "reportData": {
-            "tags" : [
-              "redesign-existing"
-            ]
+            "tags": ["redesign-existing"]
           }
         },
         {
           "text": "Replace old items with new ones",
           "nextState": "not-built",
           "reportData": {
-            "tags" : [
-              "replace-items"
-            ]
+            "tags": ["replace-items"]
           }
         },
         {
           "text": "Adding new items",
           "nextState": "not-built",
           "reportData": {
-            "tags" : [
-              "add-items"
-            ]
+            "tags": ["add-items"]
           }
         },
         {
           "text": "remove unneeded items",
           "nextState": "not-built",
           "reportData": {
-            "tags" : [
-              "remove-items"
-            ]
+            "tags": ["remove-items"]
           }
         },
         {
           "text": "changing space arrangement",
           "nextState": "not-built",
           "reportData": {
-            "tags" : [
-              "change-arrangement"
-            ]
+            "tags": ["change-arrangement"]
           }
         }
       ]
@@ -364,36 +301,31 @@
     "type": "question",
     "subtype": "multiple-choice-picture",
     "data": {
+      "question": "Which image do you like the most?",
       "allowMultiple": false,
       "options": [
         {
           "text": "Clean & Simple",
-          "image": "placeholder.jpg",
+          "image": "https://images.unsplash.com/photo-1501183638710-841dd1904471?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80",
           "nextState": "style-swatch-clean",
           "reportData": {
-            "tags" : [
-              "clean"
-            ]
+            "tags": ["clean"]
           }
         },
         {
           "text": "Artistic & Creative",
-          "image": "placeholder.jpg",
+          "image": "https://images.unsplash.com/photo-1493809842364-78817add7ffb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80",
           "nextState": "not-built",
           "reportData": {
-            "tags" : [
-              "creative"
-            ]
+            "tags": ["creative"]
           }
         },
         {
           "text": "Contemporary",
-          "image": "placeholder.jpg",
+          "image": "https://images.unsplash.com/photo-1513694203232-719a280e022f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2549&q=80",
           "nextState": "not-built",
           "reportData": {
-            "tags" : [
-              "contemporary"
-            ]
+            "tags": ["contemporary"]
           }
         },
         {
@@ -401,19 +333,15 @@
           "image": "placeholder.jpg",
           "nextState": "not-built",
           "reportData": {
-            "tags" : [
-              "traditional"
-            ]
+            "tags": ["traditional"]
           }
         },
         {
           "text": "Classic",
-          "image": "placeholder.jpg",
+          "image": "https://images.unsplash.com/photo-1519643225200-94e79e383724?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2555&q=80",
           "nextState": "not-built",
           "reportData": {
-            "tags" : [
-              "classic"
-            ]
+            "tags": ["classic"]
           }
         }
       ]
@@ -424,6 +352,7 @@
     "type": "question",
     "subtype": "multiple-choice-picture",
     "data": {
+      "question": "Which image do you prefer?",
       "allowMultiple": false,
       "options": [
         {
@@ -431,8 +360,7 @@
           "image": "placeholder.jpg",
           "nextState": "style-materials-clean",
           "reportData": {
-            "tags" : [
-            ]
+            "tags": []
           }
         },
         {
@@ -440,8 +368,7 @@
           "image": "placeholder.jpg",
           "nextState": "style-materials-clean",
           "reportData": {
-            "tags" : [
-            ]
+            "tags": []
           }
         },
         {
@@ -449,8 +376,7 @@
           "image": "placeholder.jpg",
           "nextState": "style-materials-clean",
           "reportData": {
-            "tags" : [
-            ]
+            "tags": []
           }
         }
       ]
@@ -468,8 +394,7 @@
           "image": "placeholder.jpg",
           "nextState": "space-size",
           "reportData": {
-            "tags" : [
-            ]
+            "tags": []
           }
         },
         {
@@ -477,8 +402,7 @@
           "image": "placeholder.jpg",
           "nextState": "space-size",
           "reportData": {
-            "tags" : [
-            ]
+            "tags": []
           }
         },
         {
@@ -486,8 +410,7 @@
           "image": "placeholder.jpg",
           "nextState": "space-size",
           "reportData": {
-            "tags" : [
-            ]
+            "tags": []
           }
         }
       ]
@@ -505,45 +428,35 @@
           "text": "Very small - 1m x 1m",
           "nextState": "space-size-exact",
           "reportData": {
-            "tags" : [
-              "space-very-small"
-            ]
+            "tags": ["space-very-small"]
           }
         },
         {
           "text": "Small - 2m x 2m",
           "nextState": "space-size-exact",
           "reportData": {
-            "tags" : [
-              "space-small"
-            ]
+            "tags": ["space-small"]
           }
         },
         {
           "text": "Average - 3m x 3m",
           "nextState": "space-size-exact",
           "reportData": {
-            "tags" : [
-              "space-average"
-            ]
+            "tags": ["space-average"]
           }
         },
         {
           "text": "Large - 5m x 5m",
           "nextState": "space-size-exact",
           "reportData": {
-            "tags" : [
-              "space-large"
-            ]
+            "tags": ["space-large"]
           }
         },
         {
           "text": "Very large - 10m x 10m (or bigger)",
           "nextState": "space-size-exact",
           "reportData": {
-            "tags" : [
-              "space-very-large"
-            ]
+            "tags": ["space-very-large"]
           }
         }
       ]
@@ -613,33 +526,25 @@
         {
           "text": "I want to work alone",
           "reportData": {
-            "tags" : [
-              "work-alone"
-            ]
+            "tags": ["work-alone"]
           }
         },
         {
           "text": "I want to learn skills to help",
           "reportData": {
-            "tags" : [
-              "work-learn"
-            ]
+            "tags": ["work-learn"]
           }
         },
         {
           "text": "I want to collaborate with other people at my skill level",
           "reportData": {
-            "tags" : [
-              "work-collaborate"
-            ]
+            "tags": ["work-collaborate"]
           }
         },
         {
           "text": "I want a professional designer",
           "reportData": {
-            "tags" : [
-              "work-designer"
-            ]
+            "tags": ["work-designer"]
           }
         }
       ]

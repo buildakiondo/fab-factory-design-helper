@@ -19,7 +19,7 @@ const styles = theme => ({
   },
 });
 
-function ResponseInput({ classes }) {
+function ResponseInput({ classes, ...props }) {
   return (
     <InputBase
       className={classes.root}
@@ -33,6 +33,7 @@ function ResponseInput({ classes }) {
       rows={2}
       rowsMax={2}
       placeholder="Type here..."
+      {...props}
     />
   );
 }

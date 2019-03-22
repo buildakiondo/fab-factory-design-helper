@@ -5,10 +5,9 @@ import React from 'react';
 const styles = theme => ({
   root: {
     flexGrow: 1,
-    padding: `${theme.spacing.unit * 6}px ${theme.spacing.unit * 2}px`,
     display: 'flex',
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'stretch',
   },
 });
 function Content({ children, classes, ...props }) {
