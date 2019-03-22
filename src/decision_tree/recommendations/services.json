@@ -1,0 +1,50 @@
+{
+  "kiondo" : {
+    "tags" : [
+      "work-designer"
+    ],
+    "title" : "Kiondo",
+    "description" : "Designer based in Birmingham, Uk.",
+    "link" : "https://kiondo.co.uk/"
+  },
+  "ikea" : {
+    "tags" : [
+      "add-items"
+    ],
+    "title" : "Ikea",
+    "description" : "Low cost furniture store.",
+    "link" : "https://www.ikea.com/"
+  },
+  "gumtree" : {
+    "tags" : [
+      "remove-items"
+    ],
+    "title" : "Gumtree",
+    "description" : "Website to sell items locally",
+    "link" : "https://www.gumtree.com/"
+  },
+  "ebay" : {
+    "tags" : [
+      "remove-items"
+    ],
+    "title" : "Ebay",
+    "description" : "Website to sell items nationally",
+    "link" : "https://www.ebay.co.uk/"
+  },
+  "facebookMarketplace" : {
+    "tags" : [
+      "remove-items"
+    ],
+    "title" : "Facebook Marketplace",
+    "description" : "Sell stuff locally on facebook",
+    "link" : "https://en-gb.facebook.com/marketplace/"
+  },
+  "tradeSchool" : {
+    "tags" : [
+      "work-learn"
+    ],
+    "title" : "Trade School",
+    "description" : "Barter based lessons in your local area",
+    "link" : "http://www.tradeschool.coop/"
+  }
+}

@@ -1,11 +1,51 @@
 {
-  "chairVideo" : {
-    "tags" : [
+  "chairVideo": {
+    "tags": [
       "chair",
       "diy"
     ],
-    "title" : "Build A Chair",
-    "description" : "This is how you build a chair",
-    "link" : "https://www.youtube.com/watch?v=Yu9LbvUfCgg"
+    "title": "Build A Chair",
+    "description": "This is how you build a chair",
+    "link": "https://www.youtube.com/watch?v=Yu9LbvUfCgg"
+  },
+  "productiveVideo": {
+    "tags": [
+      "productive"
+    ],
+    "title": "Open offices are overrated",
+    "description": "If you work in an office, there's a good chance it's an open one. How did we get here? And why is it so bad?",
+    "link": "https://www.youtube.com/watch?v=-p6WWRarjNs"
+  },
+  "spaceEfficientVideo": {
+    "tags": [
+      "space-efficient"
+    ],
+    "title": "Living Big In A Tiny House",
+    "description": "Youtube channel about efficient small spaces",
+    "link": "https://www.youtube.com/user/livingbigtinyhouse"
+  },
+  "creativityVideo": {
+    "tags": [
+      "creativity"
+    ],
+    "title": "Casey Neistat Studio Tour!",
+    "description": "What's in Casey Neistat's video studio!",
+    "link": "https://www.youtube.com/watch?v=mJY-HhPcFhQ"
+  },
+  "playVideo": {
+    "tags": [
+      "play"
+    ],
+    "title": "Why safe playgrounds aren't great for kids",
+    "description": "There's a case for making playgrounds riskier.",
+    "link": "https://www.youtube.com/watch?v=lztEnBFN5zU"
+  },
+  "cleanVideo": {
+    "tags": [
+      "clean"
+    ],
+    "title": "MINIMALIST CLEANING HABITS | get tidy + organised",
+    "description": "i hate to clean ! it's just the worst, don't you think ?",
+    "link": "https://www.youtube.com/watch?v=1DaOMTYrkCU"
   }
 }

@@ -134,6 +134,7 @@
     "type": "question",
     "subtype": "multiple-choice-importance",
     "data": {
+
       "question": [
         "What do you want to use the space for? (pick as many as you want)",
         "Assign importance to the following..."
