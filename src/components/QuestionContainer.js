@@ -1,10 +1,8 @@
-import { IconButton, Toolbar, Tooltip } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
-import PrevIcon from '@material-ui/icons/KeyboardArrowLeftRounded';
-import RestartIcon from '@material-ui/icons/RefreshRounded';
 import PropTypes from 'prop-types';
 import React from 'react';
 import Tree from '../decision_tree/tree';
+import QuestionNav from './QuestionNav';
 import ImportanceQuestion from './question_types/ImportanceQuestion';
 import MultiChoiceQuestion from './question_types/MultiChoiceQuestion';
 import PictureQuestion from './question_types/PictureQuestion';
@@ -50,29 +48,41 @@ class QuestionContainer extends React.Component {
   }
 
   handleNext = (currentState, nextState, data) => {
-    this.setState({
-      currentQuestion: Tree.changeState(currentState, nextState, data),
-      answeredQuestions: [...this.state.answeredQuestions, currentState],
-    });
+    this.setState({ currentQuestion: { subtype: "load" } })
+    setTimeout(() => {
+      this.setState({
+        currentQuestion: Tree.changeState(currentState, nextState, data),
+        answeredQuestions: [...this.state.answeredQuestions, currentState],
+      });
+    }, 300);
   };
 
   restart = () => {
-    this.setState({
-      currentQuestion: Tree.getCurrentState('base-need'),
-      answeredQuestions: [],
-    });
+    this.setState({ currentQuestion: { subtype: "load" } })
+    setTimeout(() => {
+      this.setState({
+        currentQuestion: Tree.getCurrentState('base-need'),
+        answeredQuestions: [],
+      });
+    }, 300);
   };
 
   previous = () => {
-    this.setState({
-      currentQuestion: Tree.getCurrentState(
-        this.state.answeredQuestions[this.state.answeredQuestions.length - 1],
-      ),
-      answeredQuestions: this.state.answeredQuestions.splice(
+    console.log(
+      this.state.answeredQuestions.splice(
         this.state.answeredQuestions.length - 1,
         1,
       ),
-    });
+    );
+    // this.setState({
+    //   currentQuestion: Tree.getCurrentState(
+    //     this.state.answeredQuestions[this.state.answeredQuestions.length - 1],
+    //   ),
+    //   answeredQuestions: this.state.answeredQuestions.splice(
+    //     this.state.answeredQuestions.length - 1,
+    //     1,
+    //   ),
+    // });
   };
 
   renderSwitch(q) {
@@ -93,8 +103,11 @@ class QuestionContainer extends React.Component {
       case 'text-multiline':
         return <TextQuestion questionObj={q} handleNext={this.handleNext} />;
 
+      case "load":
+        return "Loading"
+
       default:
-        return 'Question type not available';
+        return "Not built";
     }
   }
 
@@ -104,28 +117,11 @@ class QuestionContainer extends React.Component {
 
     return (
       <div className={classes.root}>
-        <Toolbar className={classes.toolbar} variant="dense">
-          <Tooltip title="Previous question" placement="bottom">
-            <span>
-              <IconButton
-                onClick={this.previous}
-                disabled={!answeredQuestions.length}
-              >
-                <PrevIcon />
-              </IconButton>
-            </span>
-          </Tooltip>
-          <Tooltip title="Start again" placement="bottom">
-            <span>
-              <IconButton
-                disabled={!answeredQuestions.length}
-                onClick={this.restart}
-              >
-                <RestartIcon />
-              </IconButton>
-            </span>
-          </Tooltip>
-        </Toolbar>
+        <QuestionNav
+          handleRestart={this.restart}
+          handlePrev={this.previous}
+          answeredQuestions={answeredQuestions}
+        />
         {this.renderSwitch(currentQuestion)}
       </div>
     );

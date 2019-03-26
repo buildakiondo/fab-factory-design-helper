@@ -22,7 +22,7 @@ function PictureQuestion({ questionObj, handleNext }) {
         style={{ maxWidth: 1192, margin: '0 auto' }}
       >
         {questionObj.data.options.map(option => (
-          <Grid item xs={6} lg={4}>
+          <Grid item xs={12} md={6} lg={4}>
             <ResponseImage
               image={option.image}
               onClick={() => handleClick(option)}
